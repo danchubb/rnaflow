@@ -46,7 +46,8 @@ process deseq2 {
     }
     """
     R CMD BATCH --no-save --no-restore '--args c(".") c(${sample_files}) c(${conditions}) c(${col_labels_in}) c(${levels}) c(${comparisons}) c("${ensembl2id}") c("${annotation_genes}") c(${sources_in}) c("${species}") c("${regionReport_config}") c(${task.cpus}) c("${id_type}")' ${script}
-    find . -maxdepth 3 -mindepth 3 |grep _vs_ |grep "/reports/figures" |xargs -I xxx zip -mrT xxx.zip xxx
+    #find . -maxdepth 3 -mindepth 3 |grep _vs_ |grep "/reports/figures" |xargs -I xxx zip -mrT xxx.zip xxx
+    find . -maxdepth 3 -mindepth 3 |grep _vs_ |grep "/reports/figures" |xargs -I xxx tar -zcf xxx.tar.gz xxx --remove-files
     """
 }
 /*
