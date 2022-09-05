@@ -3,7 +3,7 @@
 ***************************************************/
 process deseq2 {
     label 'deseq2'
-    time '3h'
+    time '48h'
 
     //errorStrategy 'retry'
     //maxRetries 1
